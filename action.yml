@@ -1,0 +1,16 @@
+# action.yml
+name: 'Ory CLI'
+description: 'Run the Ory CLI'
+inputs:
+  command:  # id of input
+    description: 'command to pass to the cli'
+    required: true
+    default: 'help'
+outputs:
+  out: # id of output
+    description: 'command output'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
