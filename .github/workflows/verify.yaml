@@ -2,11 +2,12 @@ name: verify-action
 on:
   push:
     branches:
-      - main
-      - master
+      - "master"
     tags:
-      - "*"
+      - "v*.*.*"
   pull_request:
+    branches:
+      - "master"
 
 jobs:
   run-action:
