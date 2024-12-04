@@ -1,0 +1,17 @@
+name: verify-action
+on:
+  push:
+    branches:
+      - main
+      - master
+    tags:
+      - "*"
+  pull_request:
+
+jobs:
+  run-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Demonsthere/cli-action:v1.0.0
+        with:
+          command: "version"
